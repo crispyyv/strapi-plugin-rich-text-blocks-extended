@@ -28,7 +28,6 @@ import { styled, CSSProperties, css } from 'styled-components';
 import { DIRECTIONS } from '../../hooks/useDragAndDrop';
 import { getTranslation } from '../../utils/getTranslation';
 
-import { decorateCode } from './Blocks/Code';
 import { type BlocksStore, useBlocksEditorContext } from './BlocksEditor';
 import { useConversionModal } from './BlocksToolbar';
 import { CustomElement, getEntries, isLinkNode, isListNode } from './utils/types';
@@ -369,8 +368,24 @@ const BlocksContent = ({ placeholder, ariaLabelId }: BlocksContentProps) => {
       return currentChildren;
     }, props.children);
 
+    // Apply inline font, color and background styles
+    const leafAny = props.leaf as any;
+    const style: React.CSSProperties = {};
+
+    if (leafAny.fontFamily) {
+      style.fontFamily = leafAny.fontFamily;
+    }
+
+    if (leafAny.fontColor) {
+      style.color = leafAny.fontColor;
+    }
+
+    if (leafAny.backgroundColor && leafAny.backgroundColor !== 'transparent') {
+      style.backgroundColor = leafAny.backgroundColor;
+    }
+
     return (
-      <span {...props.attributes} className={props.leaf.className}>
+      <span {...props.attributes} className={props.leaf.className} style={Object.keys(style).length > 0 ? style : undefined}>
         {wrappedChildren}
       </span>
     );
@@ -571,7 +586,6 @@ const BlocksContent = ({ placeholder, ariaLabelId }: BlocksContentProps) => {
             readOnly={disabled}
             placeholder={placeholder}
             $isExpandedMode={isExpandedMode}
-            decorate={decorateCode}
             renderElement={renderElement}
             renderLeaf={renderLeaf}
             onKeyDown={handleKeyDown}

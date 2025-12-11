@@ -9,7 +9,7 @@ const register = ({ strapi }: { strapi: Core.Strapi }) => {
       default: 12,
       isResizable: false
     }
-  });
+  } as any);
 };
 
 export default register;

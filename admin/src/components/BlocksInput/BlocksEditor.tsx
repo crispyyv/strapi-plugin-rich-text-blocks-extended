@@ -11,7 +11,6 @@ import { styled, type CSSProperties } from 'styled-components';
 
 import { getTranslation } from '../../utils/getTranslation';
 
-import { codeBlocks } from './Blocks/Code';
 import { headingBlocks } from './Blocks/Heading';
 import { imageBlocks } from './Blocks/Image';
 import { linkBlocks } from './Blocks/Link';
@@ -67,7 +66,6 @@ const selectorBlockKeys = [
   'list-unordered',
   'image',
   'quote',
-  'code',
   'separator',
 ] as const;
 
@@ -273,7 +271,6 @@ const BlocksEditor = React.forwardRef<{ focus: () => void }, BlocksEditorProps>(
         ...linkBlocks,
         ...imageBlocks,
         ...quoteBlocks,
-        ...codeBlocks,
         ...separatorBlocks,
       }),
       []

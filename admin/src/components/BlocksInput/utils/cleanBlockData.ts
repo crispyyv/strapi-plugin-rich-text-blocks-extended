@@ -23,29 +23,21 @@ const cleanNode = (node: Descendant): Descendant => {
       // Remove font-related properties from separator
       delete cleanedElement.fontFamily;
       delete cleanedElement.fontColor;
-      delete cleanedElement.fontSettings;
       break;
-    
+
     case 'image':
     case 'code':
       // Remove all font and separator properties from image and code blocks
       delete cleanedElement.fontFamily;
       delete cleanedElement.fontColor;
-      delete cleanedElement.fontSettings;
       delete cleanedElement.separatorStyle;
       delete cleanedElement.separatorColor;
-      delete cleanedElement.separatorSettings;
-      delete cleanedElement.separatorSize;
-      delete cleanedElement.separatorOrientation;
       break;
-      
+
     default:
       // For text blocks, remove separator properties
       delete cleanedElement.separatorStyle;
       delete cleanedElement.separatorColor;
-      delete cleanedElement.separatorSettings;
-      delete cleanedElement.separatorSize;
-      delete cleanedElement.separatorOrientation;
       break;
   }
 

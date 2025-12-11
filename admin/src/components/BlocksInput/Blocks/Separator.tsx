@@ -12,6 +12,7 @@ const SeparatorWrapper = styled.div`
 
 interface SeparatorLineProps {
   $borderStyle: string;
+  $borderColor?: string;
 }
 
 const SeparatorLine = styled.hr<SeparatorLineProps>`
@@ -22,23 +23,25 @@ const SeparatorLine = styled.hr<SeparatorLineProps>`
   width: 100%;
   height: 0;
   /* Always display as horizontal in editor, orientation is stored for external use */
-  border-top: ${({ $borderStyle, theme }) => 
-    `1px ${$borderStyle} ${theme.colors.neutral300}`};
+  border-top: ${({ $borderStyle, $borderColor, theme }) =>
+    `1px ${$borderStyle} ${$borderColor || theme.colors.neutral300}`};
 `;
 
 const separatorBlocks: Pick<BlocksStore, 'separator'> = {
   separator: {
     renderElement: (props) => {
       const element = props.element as any;
-      
+
       // Get non-viewport specific properties
       const separatorStyle = element.separatorStyle || 'solid';
+      const separatorColor = element.separatorColor;
 
       return (
         <SeparatorWrapper>
           <SeparatorLine
             {...props.attributes}
             $borderStyle={separatorStyle}
+            $borderColor={separatorColor}
           />
           <span style={{ display: 'none' }}>{props.children}</span>
         </SeparatorWrapper>

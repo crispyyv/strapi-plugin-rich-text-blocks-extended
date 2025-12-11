@@ -8,7 +8,6 @@ export interface Option {
 }
 
 export interface FontSetting {
-  breakpoint: string;
   fontSize: string | null;
   fontLeading: string | null;
   fontAlignment: string | null;
@@ -16,14 +15,12 @@ export interface FontSetting {
 }
 
 export interface SeparatorSetting {
-  breakpoint: string;
   separatorSize: number | null;
   separatorOrientation: 'horizontal' | 'vertical' | null;
   separatorLength: number | null;
 }
 
 export interface ImageSetting {
-  breakpoint: string;
   imageWidth: string | null;
   imageHeight: string | null;
   imageAspectRatioLocked?: boolean;
@@ -33,18 +30,21 @@ export interface ImageSetting {
 export interface CustomElement extends BaseElement {
   type: string;
   fontFamily?: string;
-  fontColor?: string;
-  fontSettings?: FontSetting[];
+  fontSetting?: FontSetting;
   separatorStyle?: string;
   separatorColor?: string;
-  separatorSettings?: SeparatorSetting[];
-  imageSettings?: ImageSetting[];
+  separatorSetting?: SeparatorSetting;
+  fontColor?: string;
+  imageSetting?: ImageSetting;
   [key: string]: unknown;
 }
 
 export interface CustomText extends BaseText {
   type: 'text';
   text: string;
+  fontFamily?: string;
+  fontColor?: string;
+  backgroundColor?: string;
 }
 
 // Specific element types
@@ -81,7 +81,7 @@ export interface ImageElement extends CustomElement {
     size?: number;
     previewUrl?: string;
   };
-  imageSettings?: ImageSetting[];
+  imageSetting?: ImageSetting;
   children: CustomText[];
 }
 

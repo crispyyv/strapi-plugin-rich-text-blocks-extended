@@ -17,7 +17,6 @@ export default {
       pluginId: PLUGIN_ID,
       type: 'json',
       icon: PluginIcon,
-      required: true,
       intlLabel: {
         id: `${PLUGIN_ID}.field.label`,
         defaultMessage: 'Rich Text Blocks (Extended)',

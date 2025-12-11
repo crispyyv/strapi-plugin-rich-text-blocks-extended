@@ -1,5 +1,22 @@
 import { Option } from './types';
 
+// Font Token Options (CSS custom properties for semantic fonts)
+export const FONT_TOKENS_OPTIONS: Option[] = [
+  { label: 'Heading', value: 'var(--font-heading)' },
+  { label: 'Body', value: 'var(--font-body)' },
+  { label: 'Mono', value: 'var(--font-mono)' },
+];
+
+// Color Token Options (CSS custom properties for semantic colors)
+export const COLOR_TOKENS_OPTIONS: Option[] = [
+  { label: 'On Surface', value: 'var(--color-on-surface)' },
+  { label: 'On Surface Secondary', value: 'var(--color-on-surface-secondary)' },
+  { label: 'On Surface Tertiary', value: 'var(--color-on-surface-tertiary)' },
+  { label: 'Primary', value: 'var(--color-primary)' },
+  { label: 'Secondary', value: 'var(--color-secondary)' },
+  { label: 'Accent', value: 'var(--color-accent)' },
+];
+
 export const COLORS_OPTIONS = [
   { label: 'Black', value: '#000000' },
   { label: 'White', value: '#FFFFFF' },
@@ -44,89 +61,6 @@ export const COLORS_OPTIONS = [
   { label: 'Dark Brown', value: '#A52A2A' },
 ];
 
-// Font Family Options
-export const FONT_FAMILY_OPTIONS: Option[] = [
-  { label: 'Arial', value: 'arial' },
-  { label: 'Open Sans', value: 'open-sans' },
-  { label: 'Times New Roman', value: 'times-new-roman' },
-  { label: 'Georgia', value: 'georgia' }
-];
-
-// Font Size Options
-export const FONT_SIZE_OPTIONS: Option[] = [
-  { label: '6', value: '6' },
-  { label: '8', value: '8' },
-  { label: '9', value: '9' },
-  { label: '10', value: '10' },
-  { label: '11', value: '11' },
-  { label: '12', value: '12', isDefault: true },
-  { label: '14', value: '14' },
-  { label: '16', value: '16' },
-  { label: '18', value: '18' },
-  { label: '24', value: '24' },
-  { label: '30', value: '30' },
-  { label: '48', value: '48' },
-  { label: '60', value: '60' },
-  { label: '72', value: '72' },
-  { label: '150', value: '150' },
-  { label: '300', value: '300' },
-];
-
-// Font Leading Options
-export const FONT_LEADING_OPTIONS: Option[] = [
-  { label: '6', value: '6' },
-  { label: '8', value: '8' },
-  { label: '9', value: '9' },
-  { label: '10', value: '10' },
-  { label: '11', value: '11' },
-  { label: '12', value: '12' },
-  { label: '14', value: '14' },
-  { label: '16', value: '16' },
-  { label: '18', value: '18' },
-  { label: '24', value: '24', isDefault: true },
-  { label: '30', value: '30' },
-  { label: '48', value: '48' },
-  { label: '60', value: '60' },
-  { label: '72', value: '72' },
-  { label: '150', value: '150' },
-  { label: '300', value: '300' },
-];
-
-// Font Tracking Options
-export const FONT_TRACKING_OPTIONS: Option[] = [
-  { value: '-100', label: '-100' },
-  { value: '-75', label: '-75' },
-  { value: '-50', label: '-50' },
-  { value: '-25', label: '-25' },
-  { value: '-10', label: '-10' },
-  { value: '-5', label: '-5' },
-  { value: '0', label: '0', isDefault: true },
-  { value: '5', label: '5' },
-  { value: '10', label: '10' },
-  { value: '25', label: '25' },
-  { value: '50', label: '50' },
-  { value: '75', label: '75' },
-  { value: '100', label: '100' },
-  { value: '200', label: '200' },
-];
-
-
-// Font Alignment Options
-export const FONT_ALIGNMENT_OPTIONS: Option[] = [
-  { label: 'Left', value: 'left' },
-  { label: 'Center', value: 'center' },
-  { label: 'Right', value: 'right' },
-  { label: 'Justify', value: 'justify' }
-];
-
-// Viewport Options
-export const VIEWPORT_OPTIONS: Option[] = [
-  { label: 'Mobile', value: 'mobile' },
-  { label: 'Tablet', value: 'tablet' },
-  { label: 'Desktop', value: 'desktop' }
-];
-
-
 // Separator Style Options
 export const SEPARATOR_STYLE_OPTIONS: Option[] = [
   { label: 'Solid', value: 'solid', isDefault: true },
@@ -135,25 +69,6 @@ export const SEPARATOR_STYLE_OPTIONS: Option[] = [
   { label: 'Double', value: 'double' },
 ];
 
-// Separator Orientation Options
-export const SEPARATOR_ORIENTATION_OPTIONS: Option[] = [
-  { label: 'Horizontal', value: 'horizontal', isDefault: true },
-  { label: 'Vertical', value: 'vertical' },
-];
-
 // Default global values
 export const DEFAULT_COLOR = COLORS_OPTIONS[0].value;
-
-// Default fonts values
-export const DEFAULT_FONT_FAMILY = FONT_FAMILY_OPTIONS[0].value;
-export const DEFAULT_FONT_SIZE = FONT_SIZE_OPTIONS[0].value;
-export const DEFAULT_FONT_LEADING = FONT_LEADING_OPTIONS[0].value;
-export const DEFAULT_FONT_ALIGNMENT = FONT_ALIGNMENT_OPTIONS[0].value;
-export const DEFAULT_FONT_TRACKING = FONT_TRACKING_OPTIONS[6].value;
-export const DEFAULT_VIEWPORT = VIEWPORT_OPTIONS[0].value;
-
-// Default separator values
-export const DEFAULT_SEPARATOR_SIZE = 1;
 export const DEFAULT_SEPARATOR_STYLE = SEPARATOR_STYLE_OPTIONS[0].value;
-export const DEFAULT_SEPARATOR_ORIENTATION = SEPARATOR_ORIENTATION_OPTIONS[0].value;
-export const DEFAULT_SEPARATOR_LENGTH = 100;
